@@ -1,0 +1,77 @@
+/* Bizbo Colors */
+@import "variables";
+/* Bizbo Fonts */
+@import "typography";
+/* Forms Styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  position: relative;
+  padding-bottom: 35px;
+  .field-icon {
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    font-size: 1.4rem;
+    color: $layout-dark;
+    @include xlarge-screen {
+      top: 20px;
+      left: 20px;
+    }
+  }
+  .password-toggle {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    font-size: 1.4rem;
+    color: $layout-dark;
+    &:hover {
+      cursor: pointer;
+    }
+    @include xlarge-screen {
+      top: 20px;
+      right: 20px;
+    }
+  }
+  .form-control {
+    margin: 0;
+    height: auto;
+    padding: 15px 30px;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-family: $bizbo-en-font-regular;
+    border: 1px solid $border;
+    @include normal-screen {
+      padding: 15px 35px;
+    }
+    @include xlarge-screen {
+      padding: 20px 55px;
+      font-size: 1.1rem;
+    }
+    &:focus {
+      box-shadow: none;
+      border: 1px solid $primary;
+    }
+    &.has-error {
+      &:not(.disabled) {
+        border: 1px solid $error;
+      }
+    }
+  }
+  .error-message {
+    width: 100%;
+    position: absolute;
+    bottom: 14px;
+    color: $error;
+    font-size: 0.8rem;
+    .message {
+      width: 100%;
+      display: block;
+      font-family: $bizbo-en-font-regular;
+      + .message {
+        position: absolute;
+      }
+    }
+  }
+}

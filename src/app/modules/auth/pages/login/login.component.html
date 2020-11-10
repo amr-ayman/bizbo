@@ -1,0 +1,43 @@
+<div class="login-page">
+  <div class="login-box">
+    <div class="login-banner">
+      <img src="../assets/images/login-banner.png" alt="bizbo-login-banner" class="img-fluid">
+    </div>
+    <div class="login-area">
+      <div class="login-form-wrapper">
+        <div class="form-header">
+          <div class="logo">
+            <img src="../assets/images/brand/bizbo-logo.png" alt="bizbo-logo" class="img-fluid">
+          </div>
+          <h1 class="login-title">Sign In</h1>
+          <p class="login-subtitle">Access the "Bizbo" using username and password</p>
+        </div>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="login-field">
+            <bizbo-input-text [formControlName]="'username'" [type]="'text'"
+                              [placeholder]="'Username'" [fieldIcon]="'bizbo-username'"
+                              [formControl]="formControlData('username')"
+                              [errorMessages]="errorMessages"></bizbo-input-text>
+          </div>
+          <div class="login-field">
+            <bizbo-input-text [formControlName]="'password'" [type]="'password'"
+                              [placeholder]="'Password'" [fieldIcon]="'bizbo-password'"
+                              [formControl]="formControlData('password')"
+                              [errorMessages]="errorMessages"></bizbo-input-text>
+          </div>
+          <button type="submit" class="bzbo-btn large apply"
+                  [disabled]="loggingInProgress">{{loggingInProgress ? 'Logging in...' : 'Log In'}}</button>
+        </form>
+        <div class="user-actions">
+          <div class="forget-password">
+            <a href="javascript:" class="link" (click)="forgetPassword()">Forget Password?</a>
+          </div>
+          <div class="sign-up">
+            <span class="question">Don't have any account?</span>
+            <a href="javascript:" class="link" (click)="signUp()">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

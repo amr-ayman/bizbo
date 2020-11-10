@@ -1,0 +1,60 @@
+/* Bizbo Colors */
+@import "variables";
+/* Bizbo Fonts */
+@import "typography";
+/* Bizbo Mixins */
+@import "mixins";
+/* Bizbo Button Styles Start Here */
+.bzbo-btn {
+  padding: 10px 15px;
+  color: $layout-light;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: $bizbo-en-font-regular;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.apply {
+    background-color: $primary;
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+  &.accept {
+    background-color: darken($primary, 10%);
+    &:hover {
+      background-color: darken($primary, 30%);
+    }
+  }
+  &.outline {
+    color: $layout-dark;
+    background-color: transparent;
+    border-color: $layout-dark;
+    &:hover {
+      color: $layout-light;
+      border-color: darken($primary, 30%);
+      background-color: darken($primary, 30%);
+    }
+  }
+  &.large {
+    width: 100%;
+  }
+  &.medium {
+    padding: 25px;
+    @include xlarge-screen {
+      padding: 35px 45px;
+    }
+  }
+  &.small {
+    width: fit-content;
+    display: table; // For IE
+  }
+}

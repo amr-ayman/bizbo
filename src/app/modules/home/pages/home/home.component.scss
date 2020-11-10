@@ -1,0 +1,23 @@
+@import "styles/app";
+/* Home Page Styles Start Here */
+.home-page {
+  .greeting {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-family: $bizbo-en-font-bold;
+    @include medium-screen {
+      margin-bottom: 20px;
+    }
+  }
+  .intro {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .city-weather {
+    font-size: 1.5rem;
+    font-family: $bizbo-en-font-bold;
+    .celsius {
+      font-family: $bizbo-en-font-regular;
+    }
+  }
+}

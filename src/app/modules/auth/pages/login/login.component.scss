@@ -1,0 +1,147 @@
+@import "styles/app";
+/* Login Page Styles Start Here */
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: $layout-medium;
+  @include normal-screen {
+    padding: 50px 60px;
+  }
+  @include large-screen {
+    padding: 60px 70px;
+  }
+  @include xlarge-screen {
+    padding: 80px 95px;
+  }
+  .login-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: $layout-light;
+    .login-banner {
+      display: none;
+      @include large-screen {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px;
+      }
+      @include xlarge-screen {
+        padding: 120px;
+      }
+    }
+    .login-area {
+      width: 100%;
+      padding: 30px;
+      @include small-screen {
+        padding: 50px 65px;
+      }
+      background-color: $primary;
+      @include medium-screen {
+        padding: 70px 100px;
+      }
+      @include normal-screen {
+        padding: 40px 90px;
+      }
+      @include large-screen {
+        width: 55%;
+        padding: 40px 120px;
+      }
+      @include xlarge-screen {
+        padding: 100px 200px;
+      }
+      .login-form-wrapper {
+        height: 100%;
+        padding: 50px 35px;
+        background-color: $layout-light;
+        @include medium-screen {
+          padding: 70px 100px;
+        }
+        @include normal-screen {
+          padding: 35px 160px;
+        }
+        @include large-screen {
+          padding: 25px 50px;
+        }
+        @include xlarge-screen {
+          padding: 60px 75px;
+        }
+        .form-header {
+          margin-bottom: 25px;
+          .logo {
+            width: 75px;
+            @include medium-screen {
+              width: auto;
+            }
+            @include normal-screen {
+              width: 100px;
+            }
+            @include large-screen {
+              width: 85px;
+            }
+            @include xlarge-screen {
+              width: auto;
+            }
+          }
+          .login-title {
+            margin: 30px 0 10px;
+            font-size: 2rem;
+            font-family: $bizbo-en-font-bold;
+            @include medium-screen {
+              margin: 30px 0 15px;
+              font-size: 3rem;
+            }
+            @include normal-screen {
+              margin: 20px 0 10px;
+              font-size: 1.7rem;
+            }
+            @include large-screen {
+              margin: 15px 0 5px;
+              font-size: 1.7rem;
+            }
+            @include xlarge-screen {
+              margin: 30px 0 15px;
+            }
+          }
+          .login-subtitle {
+            font-size: 1rem;
+            @include medium-screen {
+              font-size: 1.6rem;
+            }
+            @include normal-screen {
+              font-size: 1.1rem;
+            }
+            @include large-screen {
+              font-size: 1rem;
+            }
+          }
+        }
+        .login-form {
+          margin-bottom: 30px;
+          .apply {
+            margin-top: 15px;
+          }
+        }
+        .user-actions {
+          .link {
+            color: $primary;
+            text-decoration: none;
+            font-family: $bizbo-en-font-medium;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .forget-password {
+            margin-bottom: 10px;
+          }
+          .sign-up {
+            .question {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

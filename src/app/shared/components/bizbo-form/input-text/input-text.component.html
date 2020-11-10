@@ -1,0 +1,21 @@
+<div class="form-group">
+  <label *ngIf="label" class="form-control-label" [for]="formControlName">{{label}}</label>
+  <span *ngIf="fieldIcon" class="field-icon">
+    <i [class]="fieldIcon"></i>
+  </span>
+  <span *ngIf="formControlName === 'password' && formControl.value" class="password-toggle" (click)="fieldAction()">
+    <i *ngIf="!showPassword" class="bizbo-show"></i>
+    <i *ngIf="showPassword" class="bizbo-hide"></i>
+  </span>
+  <input [id]="formControlName" class="form-control"
+         [class.disabled]="disabled" [(ngModel)]="value"
+         [type]="type" [placeholder]="placeholder"
+         (input)="onChange($event.target.value)" (blur)="onTouched($event)"
+         [class.has-error]="(formControl.touched || formControl.dirty) && !formControl.valid">
+  <div class="error-message" *ngIf="(formControl.touched || formControl.dirty) && !formControl.valid">
+    <span class="message" *ngIf="formControl.errors?.required">{{errorMessages[formControlName]?.required}}</span>
+    <span class="message" *ngIf="formControl.errors?.notAlphaNum">{{errorMessages[formControlName]?.notAlphaNum}}</span>
+    <span class="message" *ngIf="formControl.errors?.maxlength">{{errorMessages[formControlName]?.maxlength}}</span>
+    <span class="message" *ngIf="formControl.errors?.invalidPassword">{{errorMessages[formControlName]?.invalidPassword}}</span>
+  </div>
+</div>
